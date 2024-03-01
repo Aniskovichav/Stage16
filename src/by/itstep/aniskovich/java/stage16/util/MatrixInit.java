@@ -5,7 +5,7 @@ import java.util.Random;
 public class MatrixInit {
     private static final Random RND;
     private static final int SIZE = 10;
-    private static final int RANGE_START = 0;
+    private static final int RANGE_START = -10;
     private static final int RANGE_END = 10;
 
     static {

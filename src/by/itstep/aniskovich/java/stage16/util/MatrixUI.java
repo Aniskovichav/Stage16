@@ -10,4 +10,10 @@ public class MatrixUI {
         return String.format("The sum of boundary elements of the matrix " +
                 "is equal to %d.", sum);
     }
+
+    public static String sumBetweenFirstAndSecondPositiveElementUI(int sum) {
+        return String.format("Sum of elements located between first and " +
+                "second positive element of each row of the matrix " +
+                "is equal to %d.", sum);
+    }
 }
