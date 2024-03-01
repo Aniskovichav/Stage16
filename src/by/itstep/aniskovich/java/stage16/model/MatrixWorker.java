@@ -83,14 +83,14 @@ public class MatrixWorker {
         return sum;
     }
 
-    public static int sumBetweenFirstAndSecondPositiveElement(int[][] matrix) {   // best - middle - worst: O(N*M*K)
+    public static int sumBetweenFirstAndSecondPositiveElement(int[][] matrix) {   // best - middle - worst: O(N*(M+K))
         if (matrix == null || matrix.length == 0) { // O(1)
             return 0;
         }
 
         int sum = 0;
 
-        for (int i = 0; i < matrix.length; i++) { // O(N*K)
+        for (int i = 0; i < matrix.length; i++) { // O(N)
             int firstIndex = -1;
             int secondIndex = -1;
 
@@ -121,5 +121,19 @@ public class MatrixWorker {
             sum += matrix[i][j];
         }
         return sum;
+    }
+
+
+    public static int defineProgressionColumn(int[][] matrix) {
+        return -1;
+    }
+    private static int checkIncreasingProgressionColumn(int[][] matrix, int j) {
+
+        for (int i = 0; i < matrix.length; i++) { // best - middle - worst: O(N)
+            if (matrix[i][j] > matrix[i + 1][j]) {
+                return -1;
+            }
+        }
+        return j;
     }
 }
