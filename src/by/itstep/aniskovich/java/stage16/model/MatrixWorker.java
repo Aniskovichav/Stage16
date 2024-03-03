@@ -110,9 +110,9 @@ public class MatrixWorker {
     }
 
     private static int sumRowBetweenFirstAndSecondDesiredEl(int[][] matrix,
-                                                 int i, int first, int second) { //Best O(1) Middle O(K) Worst O(N)
+                                                            int i, int first, int second) { //Best O(1) Middle O(K) Worst O(N)
         if (first == -1 || second == -1) {
-          return 0;
+            return 0;
         }
 
         int sum = 0;
@@ -126,7 +126,7 @@ public class MatrixWorker {
     public static String defineMonotonicColumns(int[][] matrix) { //best - middle - worst: O(N*M)
         StringBuilder builder = new StringBuilder();
 
-        for (int j = 0; j < matrix[0].length; j++) { 
+        for (int j = 0; j < matrix[0].length; j++) {
             boolean increasing = true;
 
             for (int i = 1; i < matrix.length; i++) {
@@ -169,5 +169,32 @@ public class MatrixWorker {
             }
         }
         return true;
+    }
+
+    public static int defineRowWithMaxConsecutiveCount(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return -1;
+        }
+
+        int maxRow = -1;
+        int maxCount = 0;
+
+        for (int i = 0; i < matrix.length; i++) {
+            int currentCount = 1;
+
+            for (int j = 1; j < matrix[i].length; j++) {
+                if (matrix[i][j] == matrix[i][j - 1]) {
+                    currentCount++;
+                    if (currentCount > maxCount) {
+                        maxCount = currentCount;
+                        maxRow = i;
+                    }
+                } else {
+                    currentCount = 1;
+                }
+            }
+        }
+
+        return maxRow;
     }
 }
