@@ -29,4 +29,10 @@ public class MatrixUI {
                 "ordered in ascending order is equal to %s", max);
     }
 
+    public static String defineRowWithMaxConsecutiveCountUI(int indexRow) {
+        return String.format("The longest series of identical elements " +
+                "in the matrix is in the row with index %d.", indexRow);
+    }
+
+
 }
