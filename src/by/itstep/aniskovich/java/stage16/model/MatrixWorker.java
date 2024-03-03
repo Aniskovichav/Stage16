@@ -123,17 +123,51 @@ public class MatrixWorker {
         return sum;
     }
 
+    public static String defineMonotonicColumns(int[][] matrix) { //best - middle - worst: O(N*M)
+        StringBuilder builder = new StringBuilder();
 
-    public static int defineProgressionColumn(int[][] matrix) {
-        return -1;
+        for (int j = 0; j < matrix[0].length; j++) { 
+            boolean increasing = true;
+
+            for (int i = 1; i < matrix.length; i++) {
+                if (matrix[i][j] < matrix[i - 1][j]) {
+                    increasing = false;
+                    break;
+                }
+            }
+
+            builder = increasing ? builder.append(j).append(" ") : builder;
+        }
+
+        return builder.toString();
     }
-    private static int checkIncreasingProgressionColumn(int[][] matrix, int j) {
 
-        for (int i = 0; i < matrix.length; i++) { // best - middle - worst: O(N)
-            if (matrix[i][j] > matrix[i + 1][j]) {
-                return -1;
+    public static int findMaxElementAscendingRows(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return -1;
+        }
+
+        int maxElement = Integer.MIN_VALUE;
+
+        for (int[] row : matrix) {
+            if (isAscending(row)) {
+                for (int element : row) {
+                    maxElement = element > maxElement ? element : maxElement;
+                }
             }
         }
-        return j;
+
+        return maxElement == Integer.MIN_VALUE
+                ? -1
+                : maxElement;
+    }
+
+    private static boolean isAscending(int[] array) {
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] <= array[i - 1]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
