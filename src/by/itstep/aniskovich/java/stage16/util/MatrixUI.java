@@ -16,4 +16,17 @@ public class MatrixUI {
                 "second positive element of each row of the matrix " +
                 "is equal to %d.", sum);
     }
+
+    public static String defineMonotonicColumnUI(String countColumn) {
+        return String.format("Numbers of columns whose elements form" +
+                " a monotonically increasing sequence: %s", countColumn);
+    }
+
+    public static String findMaxElementAscendingRowsUI(int max) {
+        return max == -1
+                ? "Rows of the matrix are not ordered in ascending order"
+                : String.format("The maximal element of the matrix rows " +
+                "ordered in ascending order is equal to %s", max);
+    }
+
 }
