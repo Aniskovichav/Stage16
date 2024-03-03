@@ -25,11 +25,10 @@ public class ArrayInit {
         }
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                array[i] = RND.nextInt(RANGE_START_MIN,
+            array[i] = RND.nextInt(RANGE_START_MIN,
                         RANGE_END_MAX);
             }
-        }
+
         return array;
     }
 }
