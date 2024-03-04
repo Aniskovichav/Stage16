@@ -16,4 +16,13 @@ public class ConsolePrinter {
         }
         return builder.toString();
     }
+
+    public static String printArray(int[] array) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < array.length; i++) {
+                builder.append(array[i]).append("\t");
+        }
+        return builder.toString();
+    }
 }
