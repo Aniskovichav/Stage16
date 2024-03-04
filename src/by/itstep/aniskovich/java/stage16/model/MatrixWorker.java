@@ -110,7 +110,7 @@ public class MatrixWorker {
     }
 
     private static int sumRowBetweenFirstAndSecondDesiredEl(int[][] matrix,
-                                                            int i, int first, int second) { //Best O(1) Middle O(K) Worst O(N)
+                                                int i, int first, int second) { //Best O(1) Middle O(K) Worst O(N)
         if (first == -1 || second == -1) {
             return 0;
         }
