@@ -142,7 +142,7 @@ public class MatrixWorker {
         return builder.toString();
     }
 
-    public static int findMaxElementAscendingRows(int[][] matrix) {
+    public static int findMaxElementAscendingRows(int[][] matrix) { //best - middle - worst: O(N*M)
         if (matrix == null || matrix.length == 0) {
             return -1;
         }
@@ -162,7 +162,7 @@ public class MatrixWorker {
                 : maxElement;
     }
 
-    private static boolean isAscending(int[] array) {
+    private static boolean isAscending(int[] array) { //best - middle - worst: O(N)
         for (int i = 1; i < array.length; i++) {
             if (array[i] <= array[i - 1]) {
                 return false;
@@ -171,7 +171,7 @@ public class MatrixWorker {
         return true;
     }
 
-    public static int defineRowWithMaxConsecutiveCount(int[][] matrix) {
+    public static int defineRowWithMaxConsecutiveCount(int[][] matrix) { // best - middle - worst: O(N*M)
         if (matrix == null || matrix.length == 0) {
             return -1;
         }
@@ -198,7 +198,7 @@ public class MatrixWorker {
         return maxRow;
     }
 
-    public static int defineRowWithMaxAscendingCount(int[][] matrix) {
+    public static int defineRowWithMaxAscendingCount(int[][] matrix) { // best - middle - worst: O(N*M)
         if (matrix == null || matrix.length == 0) {
             return -1;
         }
