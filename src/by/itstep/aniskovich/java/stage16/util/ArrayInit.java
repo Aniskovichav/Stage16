@@ -5,8 +5,8 @@ import java.util.Random;
 public class ArrayInit {
     private static final Random RND;
     private static final int MAX_SIZE = 10000;
-    private static final int RANGE_START_MIN = -1000;
-    private static final int RANGE_END_MAX = 1000;
+    private static final int RANGE_START_MIN = -4000;
+    private static final int RANGE_END_MAX = 4000;
 
     static {
         RND = new Random();
