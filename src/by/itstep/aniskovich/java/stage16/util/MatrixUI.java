@@ -34,5 +34,8 @@ public class MatrixUI {
                 "in the matrix is in the row with index %d.", indexRow);
     }
 
-
+    public static String defineRowWithMaxAscendingCountUI(int indexRow) {
+        return String.format("The longest series of ascending elements " +
+                "in the matrix is in the row with index %d.", indexRow);
+    }
 }
