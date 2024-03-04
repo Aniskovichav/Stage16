@@ -1,8 +1,8 @@
 package by.itstep.aniskovich.java.stage16.model;
 
 public class ArrayWorker {
-    public static int[] merge(int[] a, int[] b) {
-        if (a == null || b == null) {
+    public static int[] merge(int[] a, int[] b) { // best - middle - worst: O(N+M)
+        if (a == null || b == null || a.length == 0 || b.length == 0) {
             return new int[0];
         }
 
@@ -30,7 +30,10 @@ public class ArrayWorker {
         return mergeArray;
     }
 
-    public static int[] bubbleSort(int[] array) {
+    public static int[] bubbleSort(int[] array) { //best - middle - worst: O(N^2)
+        if (array == null || array.length == 0) {
+            return new int[0];
+        }
         int n = array.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
