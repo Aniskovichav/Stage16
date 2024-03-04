@@ -197,4 +197,31 @@ public class MatrixWorker {
 
         return maxRow;
     }
+
+    public static int defineRowWithMaxAscendingCount(int[][] matrix) {
+        if (matrix == null || matrix.length == 0) {
+            return -1;
+        }
+
+        int maxRow = -1;
+        int maxCount = 0;
+
+        for (int i = 0; i < matrix.length; i++) {
+            int currentCount = 1;
+
+            for (int j = 1; j < matrix[i].length; j++) {
+                if (matrix[i][j] > matrix[i][j - 1]) {
+                    currentCount++;
+                    if (currentCount > maxCount) {
+                        maxCount = currentCount;
+                        maxRow = i;
+                    }
+                } else {
+                    currentCount = 1;
+                }
+            }
+        }
+
+        return maxRow;
+    }
 }
